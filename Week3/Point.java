@@ -14,7 +14,7 @@ import edu.princeton.cs.algs4.StdDraw;
 public class Point implements Comparable<Point> {
 
     private final int x;     // x-coordinate of this point
-    private final int y;     // y-coordinate of this point
+    private final int y;     // y-coordinate of tcshis point
 
     /**
      * Initializes a new point.
@@ -59,7 +59,24 @@ public class Point implements Comparable<Point> {
      * @return the slope between this point and the specified point
      */
     public double slopeTo(Point that) {
-        /* YOUR CODE HERE */
+        if (this.x == that.x && this.y == that.y) {
+            return Double.NEGATIVE_INFINITY;
+        }
+
+        else if (this.x == that.x) {
+            return Double.POSITIVE_INFINITY;
+        }
+
+        else if (this.y == that.y) {
+            return Double.POSITIVE_INFINITY;
+        }
+
+        else {
+            //formula x = j and k = y
+            double j = (that.y - this. y);
+            double k = (that.x - this.x);
+            return j / k;
+        }
     }
 
     /**
